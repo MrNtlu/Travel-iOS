@@ -13,7 +13,7 @@
 		0B0351C528A15B23007E1A9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0351C428A15B23007E1A9B /* Preview Assets.xcassets */; };
 		0B24026C28A283010022FFA2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B24026B28A283010022FFA2 /* .gitignore */; };
 		0B24026E28A283310022FFA2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B24026D28A283310022FFA2 /* README.md */; };
-		0B24027328A29B380022FFA2 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B24027228A29B380022FFA2 /* Pacifico-Regular.ttf */; };
+		0B24027728A2AC2A0022FFA2 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		0B0351C428A15B23007E1A9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B24026B28A283010022FFA2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B24026D28A283310022FFA2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0B24027228A29B380022FFA2 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../../../../../../var/folders/gz/3mvx79s17ng6qd7wvprklkkr0000gn/T/MicrosoftEdgeDownloads/b5d361b9-1c43-4b26-a9e0-80ec57de88c3/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		0B24027428A29BCE0022FFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 		0B24026F28A29B0E0022FFA2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0B24027228A29B380022FFA2 /* Pacifico-Regular.ttf */,
+				0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 				0B0351C528A15B23007E1A9B /* Preview Assets.xcassets in Resources */,
 				0B24026C28A283010022FFA2 /* .gitignore in Resources */,
 				0B24026E28A283310022FFA2 /* README.md in Resources */,
-				0B24027328A29B380022FFA2 /* Pacifico-Regular.ttf in Resources */,
+				0B24027728A2AC2A0022FFA2 /* Pacifico-Regular.ttf in Resources */,
 				0B0351C228A15B23007E1A9B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
