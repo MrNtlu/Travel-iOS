@@ -39,6 +39,8 @@
 		0B0351B128A15B20007E1A9B = {
 			isa = PBXGroup;
 			children = (
+				0B24026D28A283310022FFA2 /* README.md */,
+				0B24026B28A283010022FFA2 /* .gitignore */,
 				0B0351BC28A15B20007E1A9B /* Travel */,
 				0B0351BB28A15B20007E1A9B /* Products */,
 			);
@@ -63,8 +65,6 @@
 				0B0351BF28A15B20007E1A9B /* ContentView.swift */,
 				0B0351C128A15B23007E1A9B /* Assets.xcassets */,
 				0B0351C328A15B23007E1A9B /* Preview Content */,
-				0B24026B28A283010022FFA2 /* .gitignore */,
-				0B24026D28A283310022FFA2 /* README.md */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
