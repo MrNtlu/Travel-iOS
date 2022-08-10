@@ -14,6 +14,12 @@
 		0B24026C28A283010022FFA2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B24026B28A283010022FFA2 /* .gitignore */; };
 		0B24026E28A283310022FFA2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B24026D28A283310022FFA2 /* README.md */; };
 		0B24027728A2AC2A0022FFA2 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */; };
+		0BB3045728A3DAAF0086D7F8 /* LabelDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */; };
+		0BB3045B28A3DCAC0086D7F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */; };
+		0BB3046228A3ED9C0086D7F8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3046128A3ED9C0086D7F8 /* RegisterView.swift */; };
+		0BB3046428A400760086D7F8 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3046328A400760086D7F8 /* TextFieldView.swift */; };
+		0BB3046628A40A860086D7F8 /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3046528A40A860086D7F8 /* PasswordFieldView.swift */; };
+		0BB3046828A40CE50086D7F8 /* FilledButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3046728A40CE50086D7F8 /* FilledButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,13 @@
 		0B24026D28A283310022FFA2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0B24027428A29BCE0022FFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDivider.swift; sourceTree = "<group>"; };
+		0BB3045828A3DCA60086D7F8 /* Travel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travel.entitlements; sourceTree = "<group>"; };
+		0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0BB3046128A3ED9C0086D7F8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		0BB3046328A400760086D7F8 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		0BB3046528A40A860086D7F8 /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
+		0BB3046728A40CE50086D7F8 /* FilledButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB3045B28A3DCAC0086D7F8 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +60,7 @@
 				0B24026B28A283010022FFA2 /* .gitignore */,
 				0B0351BC28A15B20007E1A9B /* Travel */,
 				0B0351BB28A15B20007E1A9B /* Products */,
+				0BB3045928A3DCAC0086D7F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +75,7 @@
 		0B0351BC28A15B20007E1A9B /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				0BB3045828A3DCA60086D7F8 /* Travel.entitlements */,
 				0B24027428A29BCE0022FFA2 /* Info.plist */,
 				0B24026F28A29B0E0022FFA2 /* Fonts */,
 				0B24026A28A27C3D0022FFA2 /* Repositories */,
@@ -91,6 +107,7 @@
 		0B24026828A27C290022FFA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0BB3045528A3DA9D0086D7F8 /* Common */,
 				0B24027528A29CB60022FFA2 /* Authentication */,
 			);
 			path = Views;
@@ -122,8 +139,28 @@
 			isa = PBXGroup;
 			children = (
 				0B0351BF28A15B20007E1A9B /* LoginView.swift */,
+				0BB3046128A3ED9C0086D7F8 /* RegisterView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		0BB3045528A3DA9D0086D7F8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */,
+				0BB3046328A400760086D7F8 /* TextFieldView.swift */,
+				0BB3046528A40A860086D7F8 /* PasswordFieldView.swift */,
+				0BB3046728A40CE50086D7F8 /* FilledButtonView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0BB3045928A3DCAC0086D7F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +179,8 @@
 			dependencies = (
 			);
 			name = Travel;
+			packageProductDependencies = (
+			);
 			productName = Travel;
 			productReference = 0B0351BA28A15B20007E1A9B /* Travel.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +209,8 @@
 				Base,
 			);
 			mainGroup = 0B0351B128A15B20007E1A9B;
+			packageReferences = (
+			);
 			productRefGroup = 0B0351BB28A15B20007E1A9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,7 +241,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B0351C028A15B20007E1A9B /* LoginView.swift in Sources */,
+				0BB3046428A400760086D7F8 /* TextFieldView.swift in Sources */,
+				0BB3046628A40A860086D7F8 /* PasswordFieldView.swift in Sources */,
+				0BB3046228A3ED9C0086D7F8 /* RegisterView.swift in Sources */,
+				0BB3045728A3DAAF0086D7F8 /* LabelDivider.swift in Sources */,
 				0B0351BE28A15B20007E1A9B /* TravelApp.swift in Sources */,
+				0BB3046828A40CE50086D7F8 /* FilledButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Travel/Travel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Travel/Preview Content\"";
@@ -357,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Travel/Travel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Travel/Preview Content\"";
