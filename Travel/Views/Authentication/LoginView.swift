@@ -10,7 +10,8 @@ import AuthenticationServices
 
 struct LoginView: View {
     
-    @State private var isSigningIn = false
+    @State private var isLoading = false
+    @State private var isSigningIn = true
     @State private var isRegisterSheetVisible = false
     
     @State private var emailTextField = ""
@@ -23,106 +24,113 @@ struct LoginView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                GeometryReader { geometry in
-                    Image("login_bg")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
-                        .blur(radius: 3)
-                }
-                if !isSigningIn {
-                    VStack(spacing: 6) {
-                        Text("Collect Moments Not Things")
-                            .font(Font.custom("Pacifico-Regular", size: 46))
-                            .foregroundColor(.black)
-                            .multilineTextAlignment(.center)
-                            .frame(maxHeight: .infinity)
-                        
-                        FilledButtonView(action: {
-                            self.isSigningIn.toggle()
-                        }, buttonText: "Sign in", color: Color("Teal")).padding(.top, 18)
-                        
-                        NavigationLink(destination: RegisterView(false)) {
-                            Text("Don't have any account? Register")
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .font(.system(size: 18, weight: .semibold))
+        ZStack {
+            NavigationView {
+                ZStack {
+                    GeometryReader { geometry in
+                        Image("login_bg")
+                            .resizable()
+                            .scaledToFill()
+                            .edgesIgnoringSafeArea(.all)
+                            .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+                            .blur(radius: 3)
+                    }
+                    if !isSigningIn {
+                        VStack(spacing: 6) {
+                            Text("Collect Moments Not Things")
+                                .font(Font.custom("Pacifico-Regular", size: 46))
                                 .foregroundColor(.black)
-                                .cornerRadius(12)
-                        }
-                        
-                    }
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                    .padding(.all, 28)
-                } else {
-                    VStack(spacing: 8) {
-                        TextFieldView(
-                            imageSystemName: "envelope.fill", imageSize: 20, textfieldPlaceholder: "Email",
-                            textfieldBinding: $emailTextField, keyboardType: .emailAddress
-                        )
-                        
-                        PasswordFieldView(textfieldBinding: $passwordTextField)
-                        
-                        FilledButtonView(action: {
-                            print("Signing in")
-                        }, buttonText: "Sign in", color: Color("Teal")).padding(.top, 18)
-                        
-                        Button {
-                            print("Forgot password")
-                        } label: {
-                            Text("Forgot Password?")
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-                        .padding(.vertical, 6)
-                        .foregroundColor(.white)
-                        .font(.system(size: 14, weight: .bold))
-                        
-                        LabelDivider(label: "OR", color: .black).padding(.vertical, 22)
-                        
-                        SignInWithAppleButton(.signIn) { request in
-                            request.requestedScopes = [.email, .fullName]
-                        } onCompletion: { result in
-                            switch result {
-                            case .success(let authResults):
-                                print("Auth Success \(authResults)")
-                            case .failure(let error) :
-                                print("Auth failed \(error)")
+                                .multilineTextAlignment(.center)
+                                .frame(maxHeight: .infinity)
+                            
+                            FilledButtonView(action: {
+                                self.isSigningIn.toggle()
+                            }, buttonText: "Sign in", color: Color("Teal")).padding(.top, 18)
+                            
+                            NavigationLink(destination: RegisterView(false)) {
+                                Text("Don't have any account? Register")
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundColor(.black)
+                                    .cornerRadius(12)
                             }
+                            
                         }
-                        .signInWithAppleButtonStyle(.black)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .frame(height: 47)
-                        .cornerRadius(12)
-                        .padding(.vertical, 12)
-                        
-                        GoogleSignInButton{
-                            print("Google Sign in pressed")
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .padding(.all, 28)
+                    } else {
+                        VStack(spacing: 8) {
+                            TextFieldView(
+                                imageSystemName: "envelope.fill", imageSize: 20, textfieldPlaceholder: "Email",
+                                textfieldBinding: $emailTextField, keyboardType: .emailAddress
+                            )
+                            
+                            PasswordFieldView(textfieldBinding: $passwordTextField)
+                            
+                            NavigationLink(destination: ContentView()) {
+                                FilledButtonView(action: {
+                                }, buttonText: "Sign in", color: Color("Teal")).padding(.top, 18)
+                                    .disabled(true)
+                            }
+                            
+                            Button {
+                                print("Forgot password")
+                            } label: {
+                                Text("Forgot Password?")
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+                            .padding(.vertical, 6)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .bold))
+                            
+                            LabelDivider(label: "OR", color: .black).padding(.vertical, 22)
+                            
+                            SignInWithAppleButton(.signIn) { request in
+                                request.requestedScopes = [.email, .fullName]
+                            } onCompletion: { result in
+                                switch result {
+                                case .success(let authResults):
+                                    print("Auth Success \(authResults)")
+                                case .failure(let error) :
+                                    print("Auth failed \(error)")
+                                }
+                            }
+                            .signInWithAppleButtonStyle(.black)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 47)
+                            .cornerRadius(12)
+                            .padding(.vertical, 12)
+                            
+                            GoogleSignInButton{
+                                print("Google Sign in pressed")
+                            }
+                            
+                            Button {
+                                self.isRegisterSheetVisible.toggle()
+                            } label: {
+                                Text("Don't have any account? Register")
+                            }
+                            .padding(.vertical, 24)
+                            .frame(maxWidth: .infinity)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.black)
+                            .sheet(isPresented: $isRegisterSheetVisible) {
+                                RegisterView()
+                            }
+                            
                         }
-                        
-                        Button {
-                            self.isRegisterSheetVisible.toggle()
-                        } label: {
-                            Text("Don't have any account? Register")
-                        }
-                        .padding(.vertical, 24)
-                        .frame(maxWidth: .infinity)
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(.black)
-                        .sheet(isPresented: $isRegisterSheetVisible) {
-                            RegisterView()
-                        }
-                        
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .padding(.all, 28)
+                        .ignoresSafeArea(.keyboard)
                     }
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                    .padding(.all, 28)
-                    .ignoresSafeArea(.keyboard)
                 }
+                .navigationTitle(isSigningIn ? "Login" : "Getting Started")
+                .navigationBarHidden(!isSigningIn)
             }
-            .navigationTitle(isSigningIn ? "Login" : "Getting Started")
-            .navigationBarHidden(!isSigningIn)
+            if isLoading {
+                LoadingView()
+            }
         }
     }
 }
