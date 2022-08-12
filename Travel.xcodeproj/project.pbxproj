@@ -16,6 +16,8 @@
 		0B24027728A2AC2A0022FFA2 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */; };
 		0B50866428A55F4600265FF8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B50866328A55F4600265FF8 /* LoadingView.swift */; };
 		0B50866728A5603100265FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B50866628A5603100265FF8 /* ContentView.swift */; };
+		0B547B7F28A69C69001FB459 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B547B7E28A69C69001FB459 /* Authentication.swift */; };
+		0B547B8428A6A9BB001FB459 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B547B8328A6A9BB001FB459 /* LoginViewModel.swift */; };
 		0BB3045728A3DAAF0086D7F8 /* LabelDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */; };
 		0BB3045B28A3DCAC0086D7F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */; };
 		0BB3046228A3ED9C0086D7F8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3046128A3ED9C0086D7F8 /* RegisterView.swift */; };
@@ -36,6 +38,8 @@
 		0B24027628A2AC2A0022FFA2 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		0B50866328A55F4600265FF8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0B50866628A5603100265FF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0B547B7E28A69C69001FB459 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		0B547B8328A6A9BB001FB459 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDivider.swift; sourceTree = "<group>"; };
 		0BB3045828A3DCA60086D7F8 /* Travel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travel.entitlements; sourceTree = "<group>"; };
 		0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -82,9 +86,11 @@
 				0BB3045828A3DCA60086D7F8 /* Travel.entitlements */,
 				0B24027428A29BCE0022FFA2 /* Info.plist */,
 				0B24026F28A29B0E0022FFA2 /* Fonts */,
-				0B24026A28A27C3D0022FFA2 /* Repositories */,
+				0B24026A28A27C3D0022FFA2 /* Observables */,
 				0B24026928A27C310022FFA2 /* ViewModels */,
 				0B24026828A27C290022FFA2 /* Views */,
+				0B547B8028A69F19001FB459 /* Services */,
+				0B547B8128A69F1F001FB459 /* Extensions */,
 				0B24026728A27C1D0022FFA2 /* Models */,
 				0B0351BD28A15B20007E1A9B /* TravelApp.swift */,
 				0B0351C128A15B23007E1A9B /* Assets.xcassets */,
@@ -121,15 +127,17 @@
 		0B24026928A27C310022FFA2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0B547B8228A6A9A9001FB459 /* Authentication */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		0B24026A28A27C3D0022FFA2 /* Repositories */ = {
+		0B24026A28A27C3D0022FFA2 /* Observables */ = {
 			isa = PBXGroup;
 			children = (
+				0B547B7E28A69C69001FB459 /* Authentication.swift */,
 			);
-			path = Repositories;
+			path = Observables;
 			sourceTree = "<group>";
 		};
 		0B24026F28A29B0E0022FFA2 /* Fonts */ = {
@@ -155,6 +163,28 @@
 				0B50866628A5603100265FF8 /* ContentView.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		0B547B8028A69F19001FB459 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0B547B8128A69F1F001FB459 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0B547B8228A6A9A9001FB459 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0B547B8328A6A9BB001FB459 /* LoginViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		0BB3045528A3DA9D0086D7F8 /* Common */ = {
@@ -256,7 +286,9 @@
 			files = (
 				0B0351C028A15B20007E1A9B /* LoginView.swift in Sources */,
 				0BB3046428A400760086D7F8 /* TextFieldView.swift in Sources */,
+				0B547B8428A6A9BB001FB459 /* LoginViewModel.swift in Sources */,
 				0BB3046628A40A860086D7F8 /* PasswordFieldView.swift in Sources */,
+				0B547B7F28A69C69001FB459 /* Authentication.swift in Sources */,
 				0BB3046228A3ED9C0086D7F8 /* RegisterView.swift in Sources */,
 				0BB3045728A3DAAF0086D7F8 /* LabelDivider.swift in Sources */,
 				0B50866728A5603100265FF8 /* ContentView.swift in Sources */,

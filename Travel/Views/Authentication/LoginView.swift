@@ -10,12 +10,14 @@ import AuthenticationServices
 
 struct LoginView: View {
     
-    @State private var isLoading = false
-    @State private var isSigningIn = true
+    @State private var isSigningIn = false
     @State private var isRegisterSheetVisible = false
     
     @State private var emailTextField = ""
     @State private var passwordTextField = ""
+    
+    @StateObject private var loginViewModel = LoginViewModel()
+    @EnvironmentObject private var authentication: Authentication
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()
@@ -68,11 +70,12 @@ struct LoginView: View {
                             
                             PasswordFieldView(textfieldBinding: $passwordTextField)
                             
-                            NavigationLink(destination: ContentView()) {
-                                FilledButtonView(action: {
-                                }, buttonText: "Sign in", color: Color("Teal")).padding(.top, 18)
-                                    .disabled(true)
-                            }
+                            FilledButtonView(action: {
+                                loginViewModel.signIn { isSignedIn in
+                                    authentication.updateAuthentication(status: isSignedIn ? .Authenticated : .NotAuthenticated)
+                                }
+                            }, buttonText: "Sign in", color: Color("Teal")).padding(.top, 18)
+                        
                             
                             Button {
                                 print("Forgot password")
@@ -123,12 +126,17 @@ struct LoginView: View {
                         .frame(maxHeight: .infinity, alignment: .bottom)
                         .padding(.all, 28)
                         .ignoresSafeArea(.keyboard)
+                        .alert("Invalid Login", isPresented: .constant(loginViewModel.error != nil), actions: {
+                            Button("OK", role: .cancel) { }
+                        }, message: {
+                            Text(loginViewModel.error?.id ?? "")
+                        })
                     }
                 }
                 .navigationTitle(isSigningIn ? "Login" : "Getting Started")
                 .navigationBarHidden(!isSigningIn)
             }
-            if isLoading {
+            if loginViewModel.isLoading {
                 LoadingView()
             }
         }

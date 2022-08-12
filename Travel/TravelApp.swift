@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct TravelApp: App {
+    
+    @StateObject private var authentication = Authentication()
+    
     var body: some Scene {
         WindowGroup {
-            LoginView().preferredColorScheme(.light)
+            switch(authentication.status) {
+            case .Error, .NotAuthenticated:
+                LoginView().preferredColorScheme(.light).environmentObject(authentication)
+            case .Authenticated:
+                ContentView().preferredColorScheme(.light)
+            }
         }
     }
 }
