@@ -18,6 +18,10 @@
 		0B50866728A5603100265FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B50866628A5603100265FF8 /* ContentView.swift */; };
 		0B547B7F28A69C69001FB459 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B547B7E28A69C69001FB459 /* Authentication.swift */; };
 		0B547B8428A6A9BB001FB459 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B547B8328A6A9BB001FB459 /* LoginViewModel.swift */; };
+		0B83056B28A6CF8B0029965E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83056A28A6CF8B0029965E /* MapView.swift */; };
+		0B83056D28A6D5870029965E /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83056C28A6D5870029965E /* CustomTabBar.swift */; };
+		0B83056F28A6D8D70029965E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83056E28A6D8D70029965E /* ViewExtensions.swift */; };
+		0B83057128A6DC470029965E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83057028A6DC470029965E /* HomeView.swift */; };
 		0BB3045728A3DAAF0086D7F8 /* LabelDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */; };
 		0BB3045B28A3DCAC0086D7F8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */; };
 		0BB3046228A3ED9C0086D7F8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3046128A3ED9C0086D7F8 /* RegisterView.swift */; };
@@ -40,6 +44,10 @@
 		0B50866628A5603100265FF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B547B7E28A69C69001FB459 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		0B547B8328A6A9BB001FB459 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0B83056A28A6CF8B0029965E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0B83056C28A6D5870029965E /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		0B83056E28A6D8D70029965E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		0B83057028A6DC470029965E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0BB3045628A3DAAF0086D7F8 /* LabelDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDivider.swift; sourceTree = "<group>"; };
 		0BB3045828A3DCA60086D7F8 /* Travel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travel.entitlements; sourceTree = "<group>"; };
 		0BB3045A28A3DCAC0086D7F8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -161,6 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				0B50866628A5603100265FF8 /* ContentView.swift */,
+				0B83056A28A6CF8B0029965E /* MapView.swift */,
+				0B83056C28A6D5870029965E /* CustomTabBar.swift */,
+				0B83057028A6DC470029965E /* HomeView.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 		0B547B8128A69F1F001FB459 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0B83056E28A6D8D70029965E /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,11 +297,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B0351C028A15B20007E1A9B /* LoginView.swift in Sources */,
+				0B83056B28A6CF8B0029965E /* MapView.swift in Sources */,
 				0BB3046428A400760086D7F8 /* TextFieldView.swift in Sources */,
+				0B83057128A6DC470029965E /* HomeView.swift in Sources */,
+				0B83056D28A6D5870029965E /* CustomTabBar.swift in Sources */,
 				0B547B8428A6A9BB001FB459 /* LoginViewModel.swift in Sources */,
 				0BB3046628A40A860086D7F8 /* PasswordFieldView.swift in Sources */,
 				0B547B7F28A69C69001FB459 /* Authentication.swift in Sources */,
 				0BB3046228A3ED9C0086D7F8 /* RegisterView.swift in Sources */,
+				0B83056F28A6D8D70029965E /* ViewExtensions.swift in Sources */,
 				0BB3045728A3DAAF0086D7F8 /* LabelDivider.swift in Sources */,
 				0B50866728A5603100265FF8 /* ContentView.swift in Sources */,
 				0B50866428A55F4600265FF8 /* LoadingView.swift in Sources */,

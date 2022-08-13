@@ -9,29 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var selectedTabIndex = 0
     
     var body: some View {
-        NavigationView {
-            TabView {
-                Text("The content of the first view")
-                    .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("First Tab")
-                      }
-                   Text("The content of the second view")
-                     .tabItem {
-                        Image(systemName: "tv.fill")
-                        Text("Second Tab")
-                      }
+        VStack(spacing: 0) {
+            ZStack {
+                switch selectedTabIndex {
+                case 0:
+                    HomeView()
+                case 1:
+                    MapView()
+                default:
+                    ScrollView {
+                        Text("Tabbed")
+                    }
+                }
             }
-            .navigationTitle("Welcome")
-            .navigationBarBackButtonHidden(true)
+            
+            CustomTabBar(selectedTabIndex: $selectedTabIndex)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .previewDevice("iPhone 13 Pro Max")
+            ContentView()
+                .previewDevice("iPhone SE (3rd generation)")
+        }
     }
 }
